@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-the-mask/0.11.1/vue-the-mask.min.js" integrity="sha512-qXurwUG9teY1KFtbBifUHInCiNK/POQqJeFRSoaHg1pHEB1tBUlFKRsfPzm1D6b6ueeQOCKldvXYCtOsPURrcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Formulário HTML</title>
+    <meta charset="utf-8"/>
+    <!-- <link rel="stylesheet" type="text/css" href="estilo.css"> -->
+</head>
+<body>
+    <div id="id" class="m-4">
+        <ul class="nav nav-tabs">
+            <li @click="mudartela(0)" class="nav-item">
+              <a class="nav-link " :class="{'active':tela==0}" href="#">Novo formulario</a>
+            </li>
+            <li @click="mudartela(1)" class="nav-item">
+              <a class="nav-link" :class="{'active':tela==1}" href="#">Lista de Usuarios</a>
+            </li>
+          </ul>
+          <div v-if="tela==0" class="d-flex justify-content-center mt-2" >
+            <div class="border border-2 p-3" style="width:50%" >
+
+            <p> Preencha o formulário abaixo: </p>
+
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='nome'" @blur="controler=''" type="text" v-model="nome" placeholder="Nome " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrasnome != false">
+                    {{regrasnome}}
+                  </div>
+    
+            </div>    
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='email'" @blur="controler=''" type="email" v-model="email" placeholder="Email " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrasemail != false">
+                    {{regrasemail}}
+                  </div>
+    
+            </div>   
+
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  v-mask="['###.###.###-##', '##.###.###/####-##']" @focus="controler='cpf'" @blur="controler=''" type="cpf" v-model="cpf" placeholder="CPF ou CNPJ " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrascpf != false">
+                    {{regrascpf}}
+                  </div>
+    
+            </div>   
+
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  v-mask="['(##) #####-####']" @focus="controler='telefone'" @blur="controler=''" type="telefone" v-model="telefone" placeholder="Telefone " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrastelefone != false">
+                    {{regrastelefone}}
+                  </div>
+    
+            </div>   
+
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  v-mask="['##.###-###']" @focus="controler='cep'" @blur="controler=''" type="cep"  v-model="cep" placeholder="Digite seu CEP" class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrascep != false">
+                    {{regrascep}}
+                  </div>
+    
+            </div> 
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='logradouro'" @blur="controler=''" type="text" v-model="logradouro" placeholder="logradouro " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regraslogradouro != false">
+                    {{regraslogradouro}}
+                  </div>
+    
+            </div>    
+        <div class="mb-2">
+            <div class="input-group  ">
+                <input type="number" @focus="controler='numero'" @blur="controler=''"  v-model="numero" placeholder="numero " class="form-control">
+              </div>
+
+              <div class="text-danger " style="font-size: 10px;" v-if="regrasnumero != false">
+                {{regrasnumero}}
+              </div>
+
+        </div>  
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='bairro'" @blur="controler=''" type="text" v-model="bairro" placeholder="bairro " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrasbairro != false">
+                    {{regrasbairro}}
+                  </div>
+    
+            </div>    
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='cidade'" @blur="controler=''" type="text" v-model="cidade" placeholder="cidade " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrascidade != false">
+                    {{regrascidade}}
+                  </div>
+    
+            </div>    
+            <div class="mb-2">
+                <div class="input-group  ">
+                    <input  @focus="controler='estado'" @blur="controler=''" type="text" v-model="estado" placeholder="estado " class="form-control">
+                  </div>
+    
+                  <div class="text-danger " style="font-size: 10px;" v-if="regrasestado != false">
+                    {{regrasestado}}
+                  </div>
+
+    <div class="d-grid gap-2 mt-3">
+        <button type="button" class="btn btn-primary" @click="salvar" >
+            Enviar
+        </button>
+    </div>
+            <div v-if="alert" class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                <strong>Usuario Cadastrado Com Sucesso</strong> 
+                <button @click="alert=false" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        </div>    
+        </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered" v-else>
+            <tr>
+                <th>
+                    deletar
+                </th>
+                <th>
+                    nome
+                </th>
+                <th>
+                    email
+                </th>
+                <th>
+                    cpf
+                </th>
+                <th>
+                    telefone
+                </th>
+                <th>
+                    cep
+                </th>
+                <th>
+                    logradouro
+                </th>
+                <th>
+                    numero
+                </th>
+                <th>
+                    bairro
+                </th>
+                <th>
+                    cidade
+                </th>
+                <th>
+                    estado
+                </th>
+            </tr>
+            <tr v-for="(item,index) in lista">
+                <td>
+                    <button type="button" class="btn btn-danger" @click="deletar(index)" >
+                        deletar
+                    </button>
+                </td>
+                <td>
+                   {{item.nome}} 
+                </td>
+                <td>
+                    {{item.email}} 
+                </td>
+                <td>
+                    {{item.cpf}} 
+                </td>
+                <td>
+                    {{item.telefone}} 
+                </td>
+                <td>
+                    {{item.cep}} 
+                </td>
+                <td>
+                    {{item.logradouro}} 
+                </td>
+                <td>
+                    {{item.numero}} 
+                </td>
+                <td>
+                    {{item.bairro}} 
+                </td>
+                <td>
+                    {{item.cidade}} 
+                </td>
+                <td>
+                    {{item.estado}} 
+                </td>
+            </tr>
+        </table>
+    </div>
+       
+
+<script src="index.js">
+
+</script>
+</body>
+</html>

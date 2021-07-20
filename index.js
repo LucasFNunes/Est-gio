@@ -80,7 +80,7 @@ var app = new Vue({
     regrasnome() {
       if (this.controler == "nome" || this.controler == "all") {
         if (this.nome == "") {
-          return "Nome Invalido";
+          return "Nome Inválido";
         }
         return false;
       }
@@ -89,7 +89,7 @@ var app = new Vue({
     regrasemail() {
       if (this.controler == "email" || this.controler == "all") {
         var re = /\S+@\S+\.\S+/;
-        if (!re.test(this.email)) return "Email invalido";
+        if (!re.test(this.email)) return "Email Inválido";
         return false;
       }
       return false;
@@ -98,7 +98,7 @@ var app = new Vue({
       if (this.controler == "cpf" || this.controler == "all") {
         var re =
           /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/;
-        if (!re.test(this.cpf)) return "CPF?CNPJ invalido";
+        if (!re.test(this.cpf)) return "CPF?CNPJ Inválido";
         return false;
       }
       return false;
@@ -106,7 +106,7 @@ var app = new Vue({
     regrastelefone() {
       if (this.controler == "telefone" || this.controler == "all") {
         var re = /(\(\d{2}\)\s)(\d{4,5}\-\d{4})/g;
-        if (!re.test(this.telefone)) return "Telefone invalido";
+        if (!re.test(this.telefone)) return "Telefone Inválido";
         return false;
       }
       return false;
@@ -114,7 +114,7 @@ var app = new Vue({
     regrascep() {
       if (this.controler == "cep" || this.controler == "all") {
         var re = /^[0-9]{2}.[0-9]{3}-[0-9]{3}$/;
-        if (!re.test(this.cep)) return "CEP invalido";
+        if (!re.test(this.cep)) return "CEP Inválido";
         return false;
       }
       return false;
@@ -122,7 +122,7 @@ var app = new Vue({
     regraslogradouro() {
       if (this.controler == "logradouro" || this.controler == "all") {
         if (this.logradouro == "") {
-          return "logradouro Invalido";
+          return "Logradouro Inválido";
         }
         return false;
       }
@@ -131,7 +131,7 @@ var app = new Vue({
     regrasnumero() {
       if (this.controler == "numero" || this.controler == "all") {
         if (this.numero == "" || this.numero < 0) {
-          return "numero Invalido";
+          return "Número Inválido";
         }
         return false;
       }
@@ -140,7 +140,7 @@ var app = new Vue({
     regrasbairro() {
       if (this.controler == "bairro" || this.controler == "all") {
         if (this.bairro == "") {
-          return "bairro Invalido";
+          return "Bairro Inválido";
         }
         return false;
       }
@@ -149,7 +149,7 @@ var app = new Vue({
     regrascidade() {
       if (this.controler == "cidade" || this.controler == "all") {
         if (this.cidade == "") {
-          return "cidade Invalido";
+          return "Cidade Inválida";
         }
         return false;
       }
@@ -158,7 +158,7 @@ var app = new Vue({
     regrasestado() {
       if (this.controler == "estado" || this.controler == "all") {
         if (this.estado == "") {
-          return "estado Invalido";
+          return "Estado Inválido";
         }
         return false;
       }

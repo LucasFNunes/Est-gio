@@ -12,16 +12,16 @@
     <div id="id" class="m-4">
         <ul class="nav nav-tabs">
             <li @click="mudartela(0)" class="nav-item">
-              <a class="nav-link " :class="{'active':tela==0}" href="#">Novo formulario</a>
+              <a class="nav-link " :class="{'active':tela==0}" href="#">Novo Formulário</a>
             </li>
             <li @click="mudartela(1)" class="nav-item">
-              <a class="nav-link" :class="{'active':tela==1}" href="#">Lista de Usuarios</a>
+              <a class="nav-link" :class="{'active':tela==1}" href="#">Lista de Usuários Cadastrados</a>
             </li>
           </ul>
           <div v-if="tela==0" class="d-flex justify-content-center mt-2" >
             <div class="border border-2 p-3" style="width:50%" >
 
-            <p> Preencha o formulário abaixo: </p>
+            <p> Preencha o Formulário Abaixo: </p>
 
             <div class="mb-2">
                 <div class="input-group  ">
@@ -35,7 +35,7 @@
             </div>    
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  @focus="controler='email'" @blur="controler=''" type="email" v-model="email" placeholder="Email " class="form-control">
+                    <input  @focus="controler='email'" @blur="controler=''" type="email" v-model="email" placeholder="Digite seu Email " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrasemail != false">
@@ -46,7 +46,7 @@
 
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  v-mask="['###.###.###-##', '##.###.###/####-##']" @focus="controler='cpf'" @blur="controler=''" type="cpf" v-model="cpf" placeholder="CPF ou CNPJ " class="form-control">
+                    <input  v-mask="['###.###.###-##', '##.###.###/####-##']" @focus="controler='cpf'" @blur="controler=''" type="cpf" v-model="cpf" placeholder="Digite seu CPF ou CNPJ " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrascpf != false">
@@ -57,7 +57,7 @@
 
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  v-mask="['(##) #####-####']" @focus="controler='telefone'" @blur="controler=''" type="telefone" v-model="telefone" placeholder="Telefone " class="form-control">
+                    <input  v-mask="['(##) #####-####']" @focus="controler='telefone'" @blur="controler=''" type="telefone" v-model="telefone" placeholder="Digite seu Telefone " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrastelefone != false">
@@ -78,7 +78,7 @@
             </div> 
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  @focus="controler='logradouro'" @blur="controler=''" type="text" v-model="logradouro" placeholder="logradouro " class="form-control">
+                    <input  @focus="controler='logradouro'" @blur="controler=''" type="text" v-model="logradouro" placeholder="Digite seu Logradouro " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regraslogradouro != false">
@@ -88,7 +88,7 @@
             </div>    
         <div class="mb-2">
             <div class="input-group  ">
-                <input type="number" @focus="controler='numero'" @blur="controler=''"  v-model="numero" placeholder="numero " class="form-control">
+                <input type="number" @focus="controler='numero'" @blur="controler=''"  v-model="numero" placeholder="Digite seu Numero " class="form-control">
               </div>
 
               <div class="text-danger " style="font-size: 10px;" v-if="regrasnumero != false">
@@ -98,7 +98,7 @@
         </div>  
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  @focus="controler='bairro'" @blur="controler=''" type="text" v-model="bairro" placeholder="bairro " class="form-control">
+                    <input  @focus="controler='bairro'" @blur="controler=''" type="text" v-model="bairro" placeholder="Digite seu Bairro " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrasbairro != false">
@@ -108,7 +108,7 @@
             </div>    
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  @focus="controler='cidade'" @blur="controler=''" type="text" v-model="cidade" placeholder="cidade " class="form-control">
+                    <input  @focus="controler='cidade'" @blur="controler=''" type="text" v-model="cidade" placeholder="Digite sua Cidade " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrascidade != false">
@@ -118,7 +118,7 @@
             </div>    
             <div class="mb-2">
                 <div class="input-group  ">
-                    <input  @focus="controler='estado'" @blur="controler=''" type="text" v-model="estado" placeholder="estado " class="form-control">
+                    <input  @focus="controler='estado'" @blur="controler=''" type="text" v-model="estado" placeholder="Digite seu Estado " class="form-control">
                   </div>
     
                   <div class="text-danger " style="font-size: 10px;" v-if="regrasestado != false">
@@ -131,7 +131,7 @@
         </button>
     </div>
             <div v-if="alert" class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-                <strong>Usuario Cadastrado Com Sucesso</strong> 
+                <strong>Usuário Cadastrado Com Sucesso</strong> 
                 <button @click="alert=false" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
         </div>    
@@ -140,43 +140,43 @@
         <table class="table table-striped table-hover table-bordered" v-else>
             <tr>
                 <th>
-                    deletar
+                    Deletar Usuário
                 </th>
                 <th>
-                    nome
+                    Nome
                 </th>
                 <th>
-                    email
+                    Email
                 </th>
                 <th>
-                    cpf
+                    CPF ou CNPJ
                 </th>
                 <th>
-                    telefone
+                    Telefone
                 </th>
                 <th>
-                    cep
+                    CEP
                 </th>
                 <th>
-                    logradouro
+                    Logradouro
                 </th>
                 <th>
-                    numero
+                    Número
                 </th>
                 <th>
-                    bairro
+                    Bairro
                 </th>
                 <th>
-                    cidade
+                    Cidade
                 </th>
                 <th>
-                    estado
+                    Estado
                 </th>
             </tr>
             <tr v-for="(item,index) in lista">
                 <td>
                     <button type="button" class="btn btn-danger" @click="deletar(index)" >
-                        deletar
+                        Deletar
                     </button>
                 </td>
                 <td>
